@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* Footer Area */
+
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -210px;
+}
+footer, .push {
+	height: 210px;
+}

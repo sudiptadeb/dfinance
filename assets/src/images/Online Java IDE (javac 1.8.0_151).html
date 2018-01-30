@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://www.compilejava.net/ -->
+<html style="overflow-x: hidden;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Online Java IDE (javac 1.8.0_151)</title>
+    
+    <meta name="description" content="Simple, fast and secure Online Java IDE / Compiler">
+
+    <!-- essential style sheets -->
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/docs.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/codemirror.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/footer.css">
+    
+    <!-- styles the fullscreen and search features -->
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/fullscreen.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/dialog.css">
+    
+    <!-- our primary themes list -->
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/3024-day.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/3024-night.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/ambiance.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/base16-dark.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/base16-light.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/blackboard.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/cobalt.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/eclipse.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/elegant.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/erlang-dark.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/lesser-dark.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/mbo.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/midnight.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/monokai.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/neat.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/night.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/paraiso-dark.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/paraiso-light.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/pastel-on-dark.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/plaintext.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/rubyblue.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/solarized.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/the-matrix.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/twilight.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/vibrant-ink.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/xq-dark.css">
+    <link rel="stylesheet" href="./Online Java IDE (javac 1.8.0_151)_files/xq-light.css">
+    
+    <!-- essential scripts for functionality -->
+    <script type="text/javascript" async="" defer="" src="./Online Java IDE (javac 1.8.0_151)_files/piwik.js"></script><script src="./Online Java IDE (javac 1.8.0_151)_files/codemirror.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/javascript.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/extra.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/active-line.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/matchbrackets.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/closebrackets.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/xml.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/fullscreen.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/search.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/searchcursor.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/dialog.js"></script>
+    
+    <!-- styles and scripts for things like slider tab -->
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/clike.js"></script>
+    <script src="./Online Java IDE (javac 1.8.0_151)_files/slideout.js"></script>
+    <script type="text/javascript">
+        $(function()
+        {
+            $('.slide-out-div').tabSlideOut(
+            {   /* ©2009 William Paoli */
+                tabHandle: '.handle',                     //class of the element that will become your tab
+                pathToTabImage: './editor/images/tab.png',//path to the image for the tab //Optionally can be set using css
+                imageHeight: '137px',                     //height of tab image           //Optionally can be set using css
+                imageWidth: '35px',                       //width of tab image            //Optionally can be set using css
+                tabLocation: 'right',                     //side of screen where tab lives, top, right, bottom, or left
+                speed: 300,                               //speed of animation
+                action: 'click',                          //options: 'click' or 'hover', action to trigger animation
+                topPos: '20px',                           //position from the top/ use if tabLocation is left or right
+                leftPos: '20px',                          //position from left/ use if tabLocation is bottom or top
+                fixedPosition: true                       //options: true makes it stick (fixed position) on scroll
+            });
+        });
+    </script>
+    <style type="text/css">
+        .slide-out-div {
+          padding: 5px;
+          width: 375px;
+          background: #EDEDED;
+          border: 2px solid #FF7519;
+          z-index:2; /* hack for IE's unclickable tabSlideOut*/
+        }
+    </style>
+</head>
+
+<body style="overflow: hidden; min-width: 650px; z-index: 1; width: auto !important;">
+
+<!-- main code area -->
+<form action="https://www.compilejava.net/" method="POST">
+<div class="wrapper">
+    <textarea name="code" id="code" style="display: none;">//*******************************************************************
+// Dear CompileJava users,
+//
+// CompileJava has been operating since 2013 completely free. If you
+// find this site useful, or would otherwise like to contribute, then
+// please consider a donation (link in 'More Info' tab) to support
+// development of the new CompileJava website (stay tuned!).
+//
+// Most sincerely, Z.
+//*******************************************************************
+
+import java.lang.Math; // headers MUST be above the first class
+
+// one class needs to have a main() method
+public class HelloWorld
+{
+  // arguments are passed using the text field below this editor
+  public static void main(String[] args)
+  {
+    OtherClass myObject = new OtherClass("Hello World!");
+    System.out.print(myObject);
+  }
+}
+
+// you can add other public classes to this editor in any order
+public class OtherClass
+{
+  private String message;
+  private boolean answer = false;
+  public OtherClass(String input)
+  {
+    message = "Why, " + input + " Isn't this something?";
+  }
+  public String toString()
+  {
+    return message;
+  }
+}</textarea><div class="CodeMirror cm-s-default CodeMirror-focused" style="height: 536px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 342px; left: 173.344px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none; font-size: 4px;"></textarea></div><div class="CodeMirror-hscrollbar" style="left: 29px; min-height: 18px; pointer-events: none;"><div style="height: 1px; width: 0px;"></div></div><div class="CodeMirror-vscrollbar" style="bottom: 0px; min-width: 18px; pointer-events: none;"><div style="width: 1px; height: 0px;"></div></div><div class="CodeMirror-scrollbar-filler"></div><div class="CodeMirror-gutter-filler"></div><div class="CodeMirror-scroll" tabindex="-1" draggable="false"><div class="CodeMirror-sizer" style="min-width: 575.281px; margin-left: 29px; min-height: 463px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><div style="width: 50px; height: 50px; overflow-x: scroll;"></div></div><div style="position: relative; z-index: 1; display: none;"><div class="CodeMirror-selected" style="position: absolute; left: 89.7656px; top: 338px; width: 54.5781px; height: 13px;"></div></div><div class="CodeMirror-code" style=""><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">1</div></div><pre><span class="cm-comment">//*******************************************************************</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">2</div></div><pre><span class="cm-comment">// Dear CompileJava users,</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">3</div></div><pre><span class="cm-comment">//</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">4</div></div><pre><span class="cm-comment">// CompileJava has been operating since 2013 completely free. If you</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">5</div></div><pre><span class="cm-comment">// find this site useful, or would otherwise like to contribute, then</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">6</div></div><pre><span class="cm-comment">// please consider a donation (link in 'More Info' tab) to support</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">7</div></div><pre><span class="cm-comment">// development of the new CompileJava website (stay tuned!).</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">8</div></div><pre><span class="cm-comment">//</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">9</div></div><pre><span class="cm-comment">// Most sincerely, Z.</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">10</div></div><pre><span class="cm-comment">//*******************************************************************</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">11</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">12</div></div><pre><span class="cm-keyword">import</span> <span class="cm-variable">java</span>.<span class="cm-variable">lang</span>.<span class="cm-variable">Math</span>; <span class="cm-comment">// headers MUST be above the first class</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">13</div></div><pre>&nbsp;</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">14</div></div><pre><span class="cm-comment">// one class needs to have a main() method</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">15</div></div><pre><span class="cm-keyword">public</span> <span class="cm-keyword">class</span> <span class="cm-variable">HelloWorld</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">16</div></div><pre>{</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">17</div></div><pre>  <span class="cm-comment">// arguments are passed using the text field below this editor</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">18</div></div><pre>  <span class="cm-keyword">public</span> <span class="cm-keyword">static</span> <span class="cm-keyword">void</span> <span class="cm-variable">main</span>(<span class="cm-variable">String</span>[] <span class="cm-variable">args</span>)</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">19</div></div><pre>  {</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">20</div></div><pre>    <span class="cm-variable">Car</span> <span class="cm-variable">b</span><span class="cm-operator">=</span> <span class="cm-keyword">new</span> <span class="cm-variable">Audi</span>();    <span class="cm-comment">//upcasting</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">21</div></div><pre><span class="cm-variable">b</span>.<span class="cm-variable">run</span>();</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">22</div></div><pre>  }</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">23</div></div><pre>}</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">24</div></div><pre><span class="cm-keyword">class</span> <span class="cm-variable">Car</span> {</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">25</div></div><pre><span class="cm-keyword">void</span> <span class="cm-variable">run</span>()</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">26</div></div><pre>{</pre></div><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">27</div></div><pre><span class="cm-variable">System</span>.<span class="cm-variable">out</span>.<span class="cm-variable">println</span><span class=" CodeMirror-matchingbracket">(</span><span class="cm-variable">“car</span> <span class="cm-variable">is</span> <span class="cm-variable">running”</span><span class=" CodeMirror-matchingbracket">)</span>; </pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">28</div></div><pre>}</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">29</div></div><pre>}</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">30</div></div><pre><span class="cm-keyword">class</span> <span class="cm-variable">Audi</span> <span class="cm-keyword">extends</span> <span class="cm-variable">Car</span> {</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">31</div></div><pre><span class="cm-keyword">void</span> <span class="cm-variable">run</span>()</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">32</div></div><pre>{</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">33</div></div><pre><span class="cm-variable">System</span>.<span class="cm-variable">out</span>.<span class="cm-variable">prinltn</span>(<span class="cm-variable">“Audi</span> <span class="cm-variable">is</span> <span class="cm-variable">running</span> <span class="cm-variable">safely</span> <span class="cm-variable">with</span> <span class="cm-number">100km</span><span class="cm-variable">”</span>);</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">34</div></div><pre>}</pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="position: absolute; left: -29px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">35</div></div><pre>}</pre></div></div><div class="CodeMirror-cursor" style="left: 144.344px; top: 338px; height: 13px; visibility: hidden;">&nbsp;</div><div class="CodeMirror-cursor CodeMirror-secondarycursor" style="display: none; visibility: hidden;">&nbsp;</div></div></div></div></div><div style="position: absolute; height: 30px; width: 1px; top: 463px;"></div><div class="CodeMirror-gutters" style="left: 0px; height: 536px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 28px;"></div></div></div></div>
+    <div class="push"></div>
+    
+    <!-- content inside slide out tab area -->
+    <div class="slide-out-div" style="line-height: 1; position: fixed; height: 531px; top: 20px; right: -389px;">
+        <a class="handle" href="https://www.compilejava.net/about.html" style="background-image: url(&quot;./editor/images/tab.png&quot;); background-repeat: no-repeat; width: 35px; height: 137px; text-indent: -99999px; display: block; outline: none; position: absolute; top: 0px; left: -35px;">More Info</a>
+        <center>
+            <h1>Online Java IDE</h1>
+            <p><a href="http://www.java.net/"><img src="./Online Java IDE (javac 1.8.0_151)_files/javanet.png" alt="Java.net Member"></a></p>
+        </center>
+        <p><strong>What is this?</strong></p>
+        <ul>
+            <li>Fast and functional online Java compiler</li>
+            <li>Always runs the latest version of Java</li>
+        </ul>
+        <p><strong>Functions:</strong></p>
+        <ul>
+            <li>Paste source to GitHub and share with others</li>
+            <li>Download compiled source files (.java, .class, .jar)</li>
+            <li>*NEW! Import a Gist (press F3)*</li>
+        </ul>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Many themes included for ease of coding</li>
+            <li>Optional command-line arguments</li>
+            <li>Auto-splits multiple public classes to files</li>
+            <li>Applet support, including JPanel <a href="https://www.compilejava.net/pages/workaround.html">*READ THIS!*</a></li>
+        </ul>
+        <p><strong>Other Notes:</strong></p>
+        <ul>
+            <li>Programs have a 5-second time limit</li>
+            <!-- <li>LWJGL partially supported. Try it!</li> -->
+            <li>Send bug reports/feature requests <a href="mailto:webmaster@ionfish.org">here</a> please</li>
+        </ul>
+        <p><strong>Shortcuts:</strong></p>
+        <ul>
+            <li>F11 : standard browser full-screen mode</li>
+            <li>F12 : Zen Mode (distraction-free coding)</li>
+            <li>F2 : shortcut to compile code (useful in Zen  Mode)</li>
+            <li>F3 : import a Gist (universal support coming)</li>
+            <li>F4 : runs Applet (after compilation) in window</li>
+        </ul>
+        <center>
+            <br><i>*shortcuts only work if 'focused' on code box</i>
+            <br>
+            <iframe src="./Online Java IDE (javac 1.8.0_151)_files/donate.html" width="100" height="50" scrolling="no" frameborder="0"></iframe>
+        </center>
+    </div>
+</div>
+
+<!-- "footer" with all of the cool stuff -->
+<footer>
+    <!-- functionality buttons -->
+    <div style="width:auto;padding-left:30px;padding-right:30px;padding-top:5px;padding-bottom:10px">
+    <div style="width:100%">
+    <center>
+    <input name="passargs" id="passargs" type="text" placeholder="(command line arguments)" style="width:100%;padding-left:00px;padding-right:00px">
+    <input name="compile" value="COMPILE &amp; EXECUTE" type="button" onclick="postForCompile()" style="width:24.5%;padding-left:00px;padding-right:10px">
+    <input name="paste" value="PASTE SOURCE" type="button" onclick="postForPaste()" style="width:24.5%;padding-left:10px;padding-right:10px">
+    <input name="download" value="DOWNLOAD ZIP" type="submit" onclick="textForDownload()" style="width:24.5%;padding-left:10px;padding-right:10px">
+    <select name="themeset" onchange="selectTheme()" id="select" style="width:24.5%;padding-left:10px;padding-right:00px">
+        <option selected="">default</option>
+        <option>3024-day</option>
+        <option>3024-night</option>
+        <option>ambiance</option>
+        <option>base16-dark</option>
+        <option>base16-light</option>
+        <option>blackboard</option>
+        <option>cobalt</option>
+        <option>eclipse</option>
+        <option>elegant</option>
+        <option>erlang-dark</option>
+        <option>lesser-dark</option>
+        <option>mbo</option>
+        <option>midnight</option>
+        <option>monokai</option>
+        <option>neat</option>
+        <option>night</option>
+        <option>paraiso-dark</option>
+        <option>paraiso-light</option>
+        <option>pastel-on-dark</option>
+        <option>plaintext</option>
+        <option>rubyblue</option>
+        <option>solarized</option>
+        <option>the-matrix</option>
+        <option>tomorrow-night-eighties</option>
+        <option>twilight</option>
+        <option>vibrant-ink</option>
+        <option>xq-dark</option>
+        <option>xq-light</option>
+    </select>
+    </center>
+    </div>
+    
+    <!-- two output boxes -->
+    <div style="float:left;width:49.5%;padding-top:5px">
+    <textarea style="width:100%;height:100%;border:none;resize:none" id="buildout" rows="8" data-role="none">(compiler output will display here)</textarea>
+    </div>
+    <div style="float:right;width:49.5%;padding-top:5px">
+    <textarea style="width:100%;height:100%;border:none;resize:none" id="execsout" rows="8" data-role="none">(program output will display here)</textarea>
+    </div>
+    </div>
+</footer>
+</form>
+
+
+
+<!-- captures all inputs and provides changes -->
+<script>
+    // disable various key functions
+    $(document).on("keypress", 'form', function (e) {
+        var mykeycode = e.keyCode || e.which;
+        if (mykeycode == 13) { // ENTER --> form submit
+            e.preventDefault();
+            return false;
+        }
+        /* BUG: PREVENTS 'r' FROM FIRING!
+        if (mykeycode == 114) { // F3 --> document search
+            e.preventDefault();
+            return false;
+        }
+        */
+    });
+    editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    styleActiveLine: true,
+    matchBrackets: true,
+    mode: "text/x-java",
+      extraKeys: {
+        "F12": function(cm) {
+          cm.setOption("fullScreen", !cm.getOption("fullScreen"));
+          editor.refresh();
+        },
+        "F11": function() {
+            if ((document.fullScreenElement && document.fullScreenElement !== null) || 
+                (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+              if (document.documentElement.requestFullScreen) {
+                document.documentElement.requestFullScreen();
+              } else if (document.documentElement.mozRequestFullScreen) {
+                document.documentElement.mozRequestFullScreen();
+              } else if (document.documentElement.webkitRequestFullScreen) {
+                document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+              }
+            }
+            else {
+              if (document.cancelFullScreen) {
+                document.cancelFullScreen();
+              } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+              } else if (document.webkitCancelFullScreen) {
+                document.webkitCancelFullScreen();
+              }
+            }
+            editor.refresh();
+        },
+        "F4": function() {
+          openApplet();
+        },
+        "F3": function() {
+          getImportPaste();
+        },
+        "F2": function() {
+          // document.forms[0].submit();
+          postForCompile();
+        }
+      }
+    });
+    // clear editor on CTRL+K combination
+    var map = [];
+    onkeydown = onkeyup = function(e){
+        e = e || event;
+        map[e.keyCode] = e.type == 'keydown';
+        if(map[17] && map[75])
+        {
+            editor.value = '';
+        }
+    }
+    var input = document.getElementById("select");
+    function selectTheme() {
+        var theme = input.options[input.selectedIndex].innerHTML;
+        editor.setOption("theme", theme);
+    }
+    //var choice = document.location.search && decodeURIComponent(document.location.search.slice(1));
+    var theme = input.options[input.selectedIndex].innerHTML;
+    if (theme) {
+        input.value = theme;
+        editor.setOption("theme", theme);
+    }
+    //use all available space
+    var browserHeight = document.documentElement.clientHeight;
+        editor.getWrapperElement().style.height = (browserHeight-(210+10))+'px';
+        editor.refresh();
+    window.onresize = function(){
+        var browserHeight = document.documentElement.clientHeight;
+        editor.getWrapperElement().style.height = (browserHeight-(210+10))+'px';
+        editor.refresh();
+    }
+    // if we have some kind of error message
+    if(typeof(data.errormsg) != "undefined")
+    {
+        alert(data.errormsg);
+    }
+    function getImportPaste() {
+        window.importme = prompt("Import a Gist URL?");
+        if(window.importme) {
+            $.post("./", {'code': editor.doc.getValue(),
+                          'passargs': $('input:text[name=passargs]').val(),
+                          'importme': window.importme,
+                          'respond': 'respond'},
+                function(data) {
+                    window.clearInterval(waiting);
+                    $("#buildout").val(data.buildout);
+                    $("#execsout").val(data.execsout);
+                    window.webapple = data.webapple;
+                    window.noinputs = data.noinputs;
+                }
+            );
+            $("#buildout").val("importing");
+            $("#execsout").val("validating");
+            waiting = setInterval(function() {
+                    $("#buildout").val($("#buildout").val() + ".");
+                    $("#execsout").val($("#execsout").val() + ".");
+            },500);
+        }
+    }
+    function postForCompile() {
+        $.post("./", {'code': editor.doc.getValue(),
+                      'passargs': $('input:text[name=passargs]').val(),
+                      'respond': 'respond'},
+            function(data) {
+                window.clearInterval(waiting);
+                $("#buildout").val(data.buildout);
+                $("#execsout").val(data.execsout);
+                window.webapple = data.webapple;
+                window.noinputs = data.noinputs;
+            }
+        );
+        $("#buildout").val("compiling");
+        $("#execsout").val("executing");
+        waiting = setInterval(function() {
+                $("#buildout").val($("#buildout").val() + ".");
+                $("#execsout").val($("#execsout").val() + ".");
+        },500);
+    }
+    function postForPaste() {
+        $.post("./", {'code': editor.doc.getValue(),
+                      'paste': 'paste'},
+            function(data) {
+                window.clearInterval(waiting);
+                $("#buildout").val(data.buildout);
+                $("#execsout").val(data.execsout);
+            }
+        );
+        $("#buildout").val("pasting code to server");
+        $("#execsout").val("waiting for response");
+        waiting = setInterval(function() {
+                $("#buildout").val($("#buildout").val() + ".");
+                $("#execsout").val($("#execsout").val() + ".");
+        },250);
+        delete window.webapple;
+    }
+    function textForDownload() {
+        $("#buildout").val("compiling");
+        $("#execsout").val("packaging");
+        waiting = setInterval(function() {
+                $("#buildout").val($("#buildout").val() + ".");
+                $("#execsout").val($("#execsout").val() + ".");
+        },500);
+        setTimeout(function() {
+            clearInterval(waiting)
+            $("#buildout").val("Successfully created .zip archive for download.");
+            $("#execsout").val("If no .class or .jar files exist then program did not compile!");
+        },2000);
+        delete window.webapple;
+    }
+    function openApplet() {
+        if(typeof window.webapple != 'undefined' && window.webapple != '')
+        {
+            window.open(window.webapple,window.webapple, "width=800, height=600");
+        }
+    }
+</script>
+
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  // tracker methods like "setCustomDimension" should be called before "trackPageView"
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://215.io/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+
+<script id="wappalyzer" src="chrome-extension://gppongmhjkpfnbhagpmjfkannfbllamg/js/inject.js"></script></body></html>

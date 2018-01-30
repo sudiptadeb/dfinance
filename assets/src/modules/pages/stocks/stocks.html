@@ -1,0 +1,64 @@
+<div class="dashboard-wrapper">
+    <div class="dfinance-search-wrapper">
+        <md-autocomplete class="dfinance-search" my-enter="ctrl.getStock()"
+                         md-selected-item="ctrl.selectedItem"
+                         md-search-text="ctrl.searchText"
+                         md-items="item in ctrl.stockSearch(ctrl.searchText)"
+                         md-item-text="item.value"
+                         md-selected-item-change="ctrl.selectedSymbolChange(item)"
+                         md-min-length="0"
+                         placeholder="Select the Stock"
+                         md-menu-class="autocomplete-custom-template"
+            <md-item-template>
+                        <div class="item-title">
+                            <span class="symbol-name">
+                              <strong>{{item.Symbol}}</strong>
+                            </span>
+                            <span class="symbol-type">
+                                {{item.type}}
+                            </span>
+                        </div>
+                        <div class="item-metadata">
+                            <i class="fa" ng-class="{'fa-line-chart':item.type=='NASDAQ','fa-key':item.type=='crypto'}"></i>
+                            <span class="company-name"> {{item['Company Name']}} </span>
+                        </div>
+            </md-item-template>
+        </md-autocomplete>
+        <div class="chart-types" layout="row" layout-align="center-center">
+            <md-button class="stock-search-btn md-icon-button" ng-click="ctrl.changeChartType('lineChart')"
+                       ng-class="{'selected':ctrl.stockChartOptions.chart.type=='lineChart'}">
+                <span class="fa fa-fw fa-line-chart"></span>
+            </md-button>
+            <md-button class="stock-search-btn md-icon-button" ng-click="ctrl.changeChartType('candlestickBarChart')"
+                       ng-class="{'selected':ctrl.stockChartOptions.chart.type=='candlestickBarChart'}">
+                <span class="fa fa-fw fa-bar-chart-o"></span>
+            </md-button>
+        </div>
+    </div>
+    <div class="dfinance-intervals">
+        <md-button ng-click="ctrl.changeFrequency('INTRADAY')"
+                   ng-class="{'selected': ctrl.selectedStock.frequency=='INTRADAY'}">Intra Day</md-button>
+        <md-button ng-click="ctrl.changeFrequency('DAILY')"
+                   ng-class="{'selected': ctrl.selectedStock.frequency=='DAILY'}">Daily</md-button>
+        <md-button ng-click="ctrl.changeFrequency('WEEKLY')"
+                   ng-class="{'selected': ctrl.selectedStock.frequency=='WEEKLY'}">Weekly</md-button>
+        <md-button ng-click="ctrl.changeFrequency('MONTHLY')"
+                   ng-class="{'selected': ctrl.selectedStock.frequency=='MONTHLY'}">Monthly</md-button>
+    </div>
+    <div class="dfinance-stock-chart-wrapper">
+        <div class="dfinance-summary">
+            <div class="selected-symbol">
+                <div class="symbol">
+                    <span class="symbol-name">{{ctrl.selectedStock.symbol}}</span> <span class="symbol-type">{{ctrl.selectedStock.type}}</span>
+                    <span class="symbol-rate-change">
+                        <span class="{{ctrl.getStockChangePercent()>0?'positive':'negative'}}" ng-bind="ctrl.getStockChangePercent()+'%'"></span>
+                        <span class="fa fa-arrow-{{ctrl.getStockChangePercent()>0?'up':'down'}}"></span>
+                    </span>
+                </div>
+                <div class="company">{{ctrl.selectedStock.symbol | getCompany:ctrl.stocks}}</div>
+            </div>
+            <div class="time">{{ctrl.stockChartData[0].values[0].date | timeToDateFormat }}</div>
+        </div>
+        <nvd3 class="dfinance-chart" options="ctrl.stockChartOptions" data="ctrl.stockChartData" api="ctrl.stockChartApi"></nvd3>
+    </div>
+</div>
